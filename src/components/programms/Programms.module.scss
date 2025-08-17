@@ -1,0 +1,245 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.programs {
+  padding: 56px 15px 50px;
+  max-width: 767px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 50px 0 50px 45px;
+    max-width: 1439px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 62px 100px 60px;
+    max-width: 100%;
+  }
+}
+
+.programs__header {
+  display: flex;
+  padding-bottom: 32px;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: 40px;
+    padding-right: 45px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding-right: 0;
+    padding-bottom: 43px;
+  }
+}
+
+.programs__title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 34px;
+    line-height: 50px;
+    padding-top: 3px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+.programs__button_prev,
+.programs__button_next {
+  z-index: 10;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    background-color: $white;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  &:active {
+    background-color: $white;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+}
+
+.programs__button_prev::before,
+.programs__button_next::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: $primary-color;
+  mask-image: url("../../assets/img/sprite/bold-arrow.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  transform: rotate(45deg);
+}
+
+.programs__button_prev::before {
+  transform: rotate(225deg);
+}
+
+.programs__button_prev.swiper-button-disabled::before,
+.programs__button_next.swiper-button-disabled::before {
+  pointer-events: none;
+  cursor: default;
+  background-color: #a9afb7;
+}
+
+.programs__button {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.24px;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 16px 16px 14px 31px;
+  width: 205px;
+  margin-top: 30px;
+  background-color: transparent;
+  outline: none;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 20px 61px 20px 30px;
+    width: 234px;
+  }
+
+  &::before {
+    right: 4px;
+  }
+
+  &::after {
+    right: 5px;
+    width: 34px;
+    height: 34px;
+    mask-image: url("../../assets/img/sprite/bold-arrow.svg");
+    mask-size: 10px 10px;
+    background-color: $white;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+
+    @media (min-width: $breakpoint-md) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &:hover::before {
+    background-color: $white;
+  }
+
+  &:hover::after {
+    background-color: $primary-color;
+    background-size: 15px 15px;
+  }
+}
+
+.programs__slider {
+  width: 320px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-md) {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    width: 1240px;
+    overflow-x: hidden;
+  }
+}
+
+.programs__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 767px) {
+    // На мобилке показываем только навигацию, скроллбар скрыт
+    gap: 8px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 40px;
+    padding-right: 46px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding-right: 0;
+    padding-top: 39px;
+  }
+}
+
+.programs__scrollbarWrap {
+  flex: 1;
+  min-width: 0;
+  display: none; // Скрываем скроллбар на мобилке по умолчанию
+
+  @media (min-width: $breakpoint-md) {
+    display: block; // Показываем скроллбар только на планшетах и выше
+  }
+}
+
+.programs__scrollbarWrap :global(.swiper-scrollbar) {
+  position: static;
+  width: 562px;
+  height: 2px;
+  background:hsla(215, 60%, 48%, 0.5);
+
+  @media (min-width: $breakpoint-xl) {
+    width: 1136px;
+  }
+
+}
+
+.programs__scrollbarWrap :global(.swiper-scrollbar-drag) {
+  height: 100%;
+  background: $primary-color;
+}
+
+.programs__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0; // Предотвращаем сжатие навигации
+}
+
+/* делаем их «некликабельными» и серыми */
+.programs__button_prev:global(.swiper-button-disabled),
+.programs__button_next:global(.swiper-button-disabled) {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.9;
+}
+
+/* перекрашиваем стрелку (псевдоэлемент) */
+.programs__button_prev:global(.swiper-button-disabled)::before,
+.programs__button_next:global(.swiper-button-disabled)::before {
+  background-color: #a9afb7;
+}

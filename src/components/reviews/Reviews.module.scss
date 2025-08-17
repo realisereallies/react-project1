@@ -1,0 +1,227 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.reviews {
+	padding: 56px 15px 50px;
+	max-width: 767px;
+	margin: 0 auto;
+
+	@media (min-width: $breakpoint-md) {
+	  max-width: 1439px;
+	  padding: 50px 0px 55px 45px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  max-width: 100%;
+	  padding: 65px 80px 65px 100px;
+	}
+}
+
+.reviews__header {
+	display: flex;
+	padding-bottom: 34px;
+	justify-content: space-between;
+	padding-right: px;
+
+	@media (min-width: $breakpoint-md) {
+	  padding-bottom: 40px;
+	  padding-right: 45px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  padding-bottom: 45px;
+	  padding-right: 0;
+	}
+}
+
+.reviews__navigation_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	padding-right: 2px;
+	margin-top: -2px;
+
+	@media (min-width: $breakpoint-xl) {
+		padding-right: 23px;
+	}
+}
+
+.reviews__title {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+
+	@media (min-width: $breakpoint-md) {
+	  font-size: 34px;
+	  line-height: 50px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  font-size: 50px;
+	  padding-left: 3px;
+	}
+}
+
+.reviews__button_prev,
+.reviews__button_next {
+	z-index: 10;
+	width: 22px;
+	height: 22px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+
+
+	&:hover {
+	  opacity: 0.7;
+	}
+
+	&:focus {
+	  background-color: $white;
+	  border-radius: 50%;
+	  opacity: 1;
+	}
+
+	&:active {
+	  background-color: $white;
+	  border-radius: 50%;
+	  opacity: 0.7;
+	}
+}
+
+.reviews__button_prev::before,
+.reviews__button_next::before {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: $primary-color;
+	mask-image: url("../../assets/img/sprite/bold-arrow.svg");
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
+	transform: rotate(45deg);
+}
+
+.reviews__button_prev::before {
+	transform: rotate(225deg);
+}
+
+.reviews__button_prev.swiper-button-disabled::before,
+.reviews__button_next.swiper-button-disabled::before {
+	pointer-events: none;
+	cursor: default;
+	background-color: #a9afb7;
+}
+
+.reviews__card {
+	min-width: 290px;
+	border: 2px solid $primary-color;
+	border-radius: 16px;
+	padding: 30px 15px 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@media (min-width: $breakpoint-md) {
+	  min-width: 560px;
+	  padding: 50px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  width: 605px;
+	  padding: 50px 48px 0 50px;
+	  min-height: 483px;
+	  justify-content: start;
+	}
+}
+
+.reviews__scrollbar_container {
+	display: none;
+
+	@media (min-width: $breakpoint-md) {
+	  padding-top: 37px;
+	  width: 678px;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  gap: 9px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  width: 100%;
+	}
+}
+
+.reviews__scrollbar_wrapper {
+	@media (min-width: $breakpoint-md) {
+	 width: 562px;
+	 height: 20px;
+	 position: relative;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+		width: 1136px;
+	}
+}
+
+.reviews__scrollbar_container .swiper-scrollbar.swiper-scrollbar-horizontal {
+	@media (min-width: $breakpoint-md) {
+	  height: 2px;
+	  background-color: rgba(49, 109, 194, 0.5) ;
+	  border-radius: 1px;
+	  position: relative;
+	  width: 100% ;
+	  z-index: 10;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  width: 100% ;
+	  margin-left: -5px;
+	}
+}
+
+
+// Специфичные стили только для Reviews секции
+.reviews {
+	--swiper-scrollbar-bg-color: rgba(49, 109, 194, 0.5);
+	--swiper-scrollbar-drag-bg-color: #316dc2;
+	--swiper-scrollbar-border-radius: 1px;
+	--swiper-scrollbar-size: 3px;
+	--swiper-scrollbar-sides-offset: 0%;
+}
+
+.reviews__scrollbar_container .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
+	@media (min-width: $breakpoint-md) {
+	  background-color: #316dc2;
+	  border-radius: 1px;
+	  transform: scaleX(1);
+	  left: -5px;
+	}
+
+
+}
+
+.reviews__slide {
+	max-width: 560px;
+	height: 100%;
+	display: flex;
+
+	@media (min-width: $breakpoint-xl) {
+	  width: auto;
+	  max-width: none;
+	}
+}
+
+.reviews {
+	:global(.swiper-slide) {
+		width: auto;
+		max-width: none;
+	}
+}

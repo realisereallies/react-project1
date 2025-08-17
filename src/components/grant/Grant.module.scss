@@ -1,0 +1,211 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+
+.grant {
+	background-color: $primary-color;
+	color: $white;
+	max-width: 767px;
+	margin: 0 auto;
+	padding: 71px 15px 70px;
+
+	@media (min-width: $breakpoint-md) {
+	  max-width: 1439px;
+	  padding: 100px 45px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  max-width: 100%;
+	  padding: 120px 100px 0;
+	}
+  }
+
+  .grant__title {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	padding-bottom: 14px;
+
+	@media (min-width: $breakpoint-md) {
+	  font-size: 34px;
+	  line-height: 50px;
+	  padding-bottom: 30px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  font-size: 50px;
+	}
+  }
+
+  .grant__wrapper p {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	padding-bottom: 30px;
+
+
+	@media (min-width: $breakpoint-md) {
+	  font-size: 16px;
+	  padding-bottom: 40px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  max-width: 100%;
+	  line-height: 26px;
+	}
+  }
+
+  .grant__container {
+	@media (min-width: $breakpoint-xl) {
+	  display: flex;
+	  gap: 136px;
+	  padding-bottom: 119px;
+	}
+  }
+
+  .grant__img_container {
+    position: relative;
+    padding-bottom: 41px;
+    overflow: hidden;
+    background-color: $primary-color;
+    border-radius: 16px; // ✅ добавь сюда
+
+    @media (min-width: $breakpoint-md) {
+        padding-bottom: 50px;
+        flex-shrink: 0;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        width: 498px;
+    }
+}
+
+  .grant__img_container {
+	img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;
+	  border-radius: 16px;
+
+
+	  @media (min-width: $breakpoint-md) {
+		height: 375px;
+		border-radius:16px;
+	  }
+
+	  @media (min-width: $breakpoint-xl) {
+		width: 498px;
+		height: 363px;
+		flex-shrink: 0;
+	  }
+	}
+  }
+
+
+  .grant__subtitle {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	padding-bottom: 29px;
+
+	@media (min-width: $breakpoint-md) {
+	  font-size: 28px;
+	  line-height: 28px;
+	  padding-bottom: 45px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  font-size: 32px;
+	  line-height: 36px;
+	  padding-top: 10px;
+	  padding-bottom: 55px;
+	}
+  }
+
+  .grant__list {
+	list-style: none;
+	counter-reset: grant-counter;
+	padding: 0;
+	margin: 0;
+	padding-left: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	@media (min-width: $breakpoint-md) {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr;
+	  gap: 25px 48px;
+	  padding-left: 20px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 23px;
+	  min-width: 498px;
+	}
+  }
+
+  .grant__item {
+	counter-increment: grant-counter;
+	position: relative;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	border: solid 1px $white;
+	border-radius: 16px;
+	padding: 24px 20px 24px 25px;
+
+	@media (min-width: $breakpoint-md) {
+	  min-width: 305px;
+	  font-size: 16px;
+	  padding: 30px 26px 30px 25px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  line-height: 26px;
+	}
+
+	&::before {
+	  content: counter(grant-counter);
+	  position: absolute;
+	  left: -17px;
+	  top: -5px;
+	  width: 32px;
+	  height: 32px;
+	  background-color: $primary-color;
+	  color: $white;
+	  font-weight: 500;
+	  font-size: 18px;
+	  line-height: 18px;
+	  letter-spacing: 0%;
+	  text-align: center;
+	  vertical-align: middle;
+	  text-transform: uppercase;
+	  border-radius: 50%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  @media (min-width: $breakpoint-md) {
+		font-size: 22px;
+		line-height: 22px;
+		left: -20px;
+		top: -15px;
+
+		width: 40px;
+		height: 40px;
+	  }
+	}
+  }
+

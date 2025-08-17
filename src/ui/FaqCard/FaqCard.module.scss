@@ -1,0 +1,191 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.faqCard {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faqCard__details {
+  border: 2px solid $primary-color;
+  border-radius: 14px;
+  padding: 22px 16px 22px 15px;
+  background-color: transparent;
+  transition: background-color 0.1s ease;
+  outline: none;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 37px 30px;
+    border-radius: 16px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 43px 40px;
+  }
+
+  &.hovered {
+    background-color: $white;
+  }
+
+  &.active {
+    background-color: #275699;
+    color: $white;
+  }
+
+  &[open] {
+    background-color: $primary-color;
+    color: $white;
+    padding-bottom: 20px;
+
+    @media (min-width: $breakpoint-md) {
+      padding-top: 37px;
+      padding-bottom: 30px;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      padding-top: 43px;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.faqCard__question {
+  position: relative;
+  padding-right: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  @media (min-width: $breakpoint-md) {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &::before {
+    background-color: $primary-color;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  &::after {
+    background-color: $white;
+    mask-image: url("../../assets/img/sprite/plus.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 20px 20px;
+    z-index: 1;
+    transition: background-color 0.3s;
+    ;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $primary-color;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: $white;
+    border: solid 1px $primary-color;
+  }
+
+  &:active::before {
+    background-color: $white;
+    border: solid 1px $primary-color;
+  }
+
+  &:active::after {
+    background-color: $primary-color;
+  }
+}
+
+.faqCard__details[open] .faqCard__question::after {
+  background-color: $primary-color;
+  mask-image: url("../../assets/img/sprite/minus.svg");
+
+}
+
+.faqCard__details[open] .faqCard__question::before {
+  background-color: $white;
+  border: 1px solid $white;
+}
+
+.faqCard__details[open] .faqCard__question {
+
+  &:hover::before,
+  &:focus::before {
+    background-color: $primary-color;
+    border: solid 1px $white;
+  }
+
+  &:focus::after,
+  &:hover::after {
+    background-color: $white;
+  }
+}
+
+.faqCard__details[open].active .faqCard__question::before {
+  background-color: $white;
+  border: solid 1px $primary-color;
+}
+
+.faqCard__details[open].active .faqCard__question::after {
+  background-color: $primary-color;
+}
+
+.faqCard__answer {
+  padding-top: 22px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  padding-right: 20px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 27px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    line-height: 26px;
+    padding-top: 23px;
+  }
+
+  p {
+    margin: 0;
+  }
+} 

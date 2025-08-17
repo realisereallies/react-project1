@@ -1,0 +1,208 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.reviewCard {
+  min-width: 290px;
+  border: 2px solid $primary-color;
+  border-radius: 16px;
+  padding: 30px 15px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-md) {
+    width: 560px;
+    padding: 50px 40px 40px 50px;
+    min-height: 417px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    width: 604px;
+    padding: 50px 48px 0 50px;
+    min-height: 483px;
+    justify-content: start;
+  }
+}
+
+.reviewCard__img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+
+  @media (min-width: $breakpoint-md) {
+    width: 90px;
+    height: 90px;
+
+    /* Критично: запретить сжатие */
+    flex-shrink: 0;
+    min-width: 90px;
+    min-height: 90px;
+
+    /* На случай глобального img { max-width:100%; height:auto } */
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    display: block;
+  }
+}
+
+
+
+.reviewCard__user {
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    align-self: flex-start;
+    padding-bottom: 16px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-bottom: 13px;
+    
+  }
+}
+
+.reviewCard__user_inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 11px;
+
+  @media (min-width: $breakpoint-md) {
+    gap: 15px;
+    align-items: flex-start;
+    padding-bottom: 15px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    gap: 15px;
+    padding-bottom: 17px;
+  }
+}
+
+.reviewCard__name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  align-self: flex-start;
+  padding-top: 12px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 0;
+    align-self: center;
+    padding-bottom: 0px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 18px;
+  }
+}
+
+/* Дай правой части возможность сжиматься, а не давить аватар */
+.reviewCard__user_inner > *:not(.reviewCard__img) {
+  min-width: 0;
+}
+
+.reviewCard__data_inner {
+  display: flex;
+  padding-bottom: 24px;
+  gap: 25px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 23px;
+    padding-right: 11px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-right: 0;
+
+  }
+}
+
+
+
+.reviewCard__content {
+  color: $font-grey;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 3px;
+  }
+}
+
+.reviewCard__label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.12px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: $primary-color;
+  display: inline-block;
+  padding-bottom: 8px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: 10px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-bottom: 8px;
+  }
+}
+
+.reviewCard__quote {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  padding-bottom: 20px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 24px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 24px;
+    line-height: 26px;
+    padding-bottom: 25px;
+  }
+}
+
+.reviewCard p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: $font-grey;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    line-height: 26px;
+    padding-right: 30px;
+  }
+} 
+

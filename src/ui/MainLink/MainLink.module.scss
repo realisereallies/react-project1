@@ -1,0 +1,116 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+
+.mainLink {
+	position: relative;
+	text-transform: uppercase;
+	font-family: $font-main;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 0.28px;
+	border: 1px solid $primary-color;
+	border-radius: 30px;
+	color: $primary-color;
+	background-color: $white;
+	cursor: pointer;
+	padding: 15px 59px 15px 20px;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+
+	@media (min-width: $breakpoint-md) {
+  padding: 20px 81px 20px 31px;
+  font-size: 14px;
+  line-height: 14px;
+	  }
+
+	@media (min-width: $breakpoint-xl) {
+		padding: 20px 81px 22px 31px;
+	}
+
+
+
+	&::before,
+	&::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  width: 34px;
+	  height: 34px;
+	  transform: translateY(-50%);
+	  border-radius: 50%;
+	  pointer-events: none;
+	}
+
+	&::before {
+	  right: 4px;
+	  background-color: $primary-color;
+	  border: 1px solid $primary-color;
+	  z-index: 1;
+
+	  @media (min-width: $breakpoint-md) {
+		width: 46px;
+		height: 46px;
+	  }
+	}
+
+	&::after {
+	  right: 5px;
+	  z-index: 2;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: 10px 10px;
+	  transition: transform 0.3s ease, opacity 0.3s ease;
+
+	  @media (min-width: $breakpoint-md) {
+		right: 10px;
+	  }
+	}
+
+	&:hover, &:focus {
+	  color: $white;
+	  background-color: $primary-color;
+
+	  &::before {
+		background-color: $white;
+	  }
+
+	  &::after {
+		background-color: $primary-color;
+		transform: translateY(-50%) rotate(45deg);
+	  }
+	}
+
+
+
+	&:active {
+	  opacity: 0.9;
+	}
+  }
+
+  // Варианты иконок
+  .arrow::after {
+	background-image: url('/img/sprite/arrow.svg');
+  }
+
+  .burger::after {
+	background-image: url('/img/sprite/burger.svg');
+  }
+
+  .plus::after {
+	mask-image: url('/img/sprite/plus.svg');
+	mask-size: 10px 10px;
+	background-color: $white;
+	mask-repeat: no-repeat;
+	mask-position: center;
+  }
+
+  .minus::after {
+	mask-image: url('/img/sprite/minus.svg');
+	mask-size: 10px 10px;
+	background-color: $white;
+	mask-repeat: no-repeat;
+	mask-position: center;
+  }

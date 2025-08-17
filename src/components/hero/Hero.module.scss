@@ -1,0 +1,197 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 568px;
+  max-width: 767px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-md) {
+    min-height: 1024px;
+    max-width: 1439px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    min-height: 800px;
+    max-width: 100%;
+  }
+
+  // CSS-переменные для Swiper
+  --swiper-pagination-bullet-inactive-color: $white;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-active-color: $primary-color;
+  --swiper-pagination-bullet-border-radius: 50%;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+
+  @media (min-width: $breakpoint-md) {
+    --swiper-pagination-bullet-size: 12px;
+  }
+}
+
+.hero__container {
+  min-height: inherit;
+  height: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 100%;
+  }
+
+  :global(.swiper-slide) {
+    min-height: 568px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+
+	@media (min-width: $breakpoint-md) {
+		height: 1024px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+		height: 800px;
+	}
+  }
+}
+
+.hero__container.swiper-wrapper {
+  min-height: 100%;
+  display: flex;
+}
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  @media (min-width: $breakpoint-md) {
+    min-height: 1024px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    min-height: 800px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero__card {
+  position: relative;
+  z-index: 1;
+  margin-top: 208px;
+  margin-bottom: 20px;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: 666px;
+    margin-left: 30px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    margin-top: 412px;
+    margin-left: 85px;
+  }
+}
+
+.hero__title {
+  position: relative;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  background-color: $white;
+  border-radius: 17px 17px 17px 0;
+  min-width: 290px;
+  max-width: 400px;
+  padding: 20px 0 16px 14px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 36px;
+    line-height: 44px;
+    max-width: 659px;
+    padding: 32px 69px 23px 40px;
+    border-radius: 30px 30px 30px 0;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 54px;
+    line-height: 62px;
+    max-width: 968px;
+    padding: 42px 69px 29px 50px;
+  }
+}
+
+.hero__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $font-grey;
+  background-color: $white;
+  border-radius: 0 0 15px;
+  max-width: 267px;
+  margin-top: -6px;
+  padding: 7px 2px 14px 14px;
+
+  @media (min-width: $breakpoint-xl) {
+    line-height: 26px;
+    min-width: 446px;
+  }
+}
+
+.hero__button {
+  display: inline-block;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  min-width: 136px;
+  padding: 16px 58px 14px 21px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 14px;
+    line-height: 14px;
+    min-width: 198px;
+    padding: 21px 81px 20px 29px;
+  }
+
+  &::after {
+    right: 5px;
+    width: 34px;
+    height: 34px;
+    mask-image: url('../../assets/img/sprite/bold-arrow.svg');
+    background-color: $white;
+    mask-size: 10px 10px;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+
+    @media (min-width: $breakpoint-md) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &:hover::after {
+    background-color: $primary-color;
+  }
+
+  &:focus::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &:hover::before {
+    background-color: $white;
+  }
+}
+
+
+  

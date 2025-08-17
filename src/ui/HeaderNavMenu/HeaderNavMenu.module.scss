@@ -1,0 +1,139 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(49, 109, 194, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 78px;
+  right: 17px;
+  padding: 32px 26px 35px;
+  color: $white;
+  background-color: $primary-color;
+  border-radius: 15px;
+  width: 290px;
+  z-index: 2;
+
+  @media (min-width: $breakpoint-md) {
+    top: 100px;
+    right: 45px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    right: 100px;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.navItem a,
+.navItem summary {
+  text-decoration: none;
+  color: $white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  opacity: 0.7;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.subMenu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 16px;
+  padding-left: 15px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navDetails[open] .subMenu {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px; // безопасный максимум
+}
+
+.subMenu a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-transform: none;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.navDetails[open] > summary,
+.navDetails[open] .subMenu a {
+  opacity: 1;
+}
+
+.navItem summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $white;
+  list-style: none;
+  cursor: pointer;
+}
+
+.navItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.navItem summary::after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url('../../assets/img/sprite/form-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.3s;
+}
+
+.navDetails[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.isDisabled {
+  pointer-events: none;
+  opacity: 0.4;
+}

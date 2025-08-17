@@ -1,0 +1,132 @@
+@import './fonts';
+@import './mixins';
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: $font-main;
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+.br_mobile {
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.br_tablet {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+  }
+
+  @media (width >= 1440px) {
+    display: none;
+  }
+}
+
+.br_desktop {
+  display: none;
+
+  @media (width >= 1440px) {
+    display: block;
+  }
+}
+
+.br_tabmobile {
+  @media (width >= 1440px) {
+    display: none;
+  }
+}
+
+.br_tabdesktop {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+  }
+}
+
+.br_mobdesktop {
+  @media (width >= 768px) {
+    display: none;
+  }
+
+  @media (width >= 1440px) {
+    display: block;
+  }
+}
+
+.br_mobtablet {
+  @media (width >= 1440px) {
+    display: none;
+  }
+}
+
+// Новые классы для компонента BR
+.br-sm {
+  display: block;
+  
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.br-sm-md {
+  display: block;
+  
+  @media (width >= 1440px) {
+    display: none;
+  }
+}
+
+.br-md {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+  }
+
+  @media (width >= 1440px) {
+    display: none;
+  }
+}
+
+.br-lg {
+  display: none;
+
+  @media (width >= 1440px) {
+    display: block;
+  }
+}
+
+/* Всегда виден br-all */
+.br-all { display: inline; }
+
+.visually_hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+  }

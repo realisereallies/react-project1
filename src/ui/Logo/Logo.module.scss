@@ -1,0 +1,17 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.logoWrapper {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .logo {
+	width: 30px;
+	height: 30px;
+  }

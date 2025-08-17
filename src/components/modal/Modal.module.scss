@@ -1,0 +1,390 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(49, 109, 194, 0.2);
+  z-index: 1000;
+  color: $font-grey;
+  padding: 20px; // ← уже есть
+  padding-top: 40px;      // 👈 добавь это
+  padding-bottom: 40px;   // 👈 и это
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+
+.modal__content {
+  background: $white;
+  padding: 32px 15px 40px;
+  border-radius: 15px;
+  max-width: 290px;
+  width: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1001;
+ 
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 510px;
+    padding: 40px 80px 40px;
+  }
+
+
+}
+
+.modal__close {
+  position: absolute;
+  top: 11px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+
+  @media (min-width: $breakpoint-md) {
+    top: 23px;
+    right: 25px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background-color: $primary-color;
+    mask-image: url("../../assets/img/sprite/cross.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 15px 15px;
+
+    @media (min-width: $breakpoint-md) {
+      mask-size: 22px 22px;
+    }
+  }
+}
+
+.modal__form_title {
+  padding-bottom: 7px;
+  color: $primary-color;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 28px;
+    padding-bottom: 17px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 32px;
+    line-height: 36px;
+    padding-bottom: 13px;
+  }
+}
+
+.modal__form_subtitle {
+  padding-bottom: 25px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-right: 5px;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 16px;
+    padding-bottom: 32px;
+    padding-right: 0;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    line-height: 26px;
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  @media (min-width: $breakpoint-md) {
+    gap: 23px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    gap: 21px;
+  }
+}
+
+.modal__form_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form_label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  padding-bottom: 8px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: 15px;
+  }
+}
+
+.modal__form_input {
+  border: 1px solid hsla(0, 0%, 28%, 0.4);
+  border-radius: 9px;
+  padding: 14px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 16px;
+  }
+
+  &:hover {
+    border: 1px solid hsla(0, 0%, 28%, 1);
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid hsla(0, 0%, 28%, 1);
+  }
+
+  &:disabled {
+    border: 1px solid hsla(214, 9%, 69%, 0.5);
+    background-color: hsla(214, 9%, 69%, 0.5);
+  }
+}
+
+.modal__form__validated .modal__form_input:invalid {
+  border-color: #ff5e66;
+  background-color: hsl(357, 100%, 68%, 0.2);
+}
+
+.modal__form__validated .modal__form_checkbox_input:invalid,
+.modal__form__validated .modal__form_checkbox_input:not(:checked) {
+  background-color: rgba(255, 94, 102, 0.3);
+  border: 1px solid #ff5e66;
+}
+
+.modal__form__validated .modal__form_checkbox_input:checked {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+}
+
+.modal__form__validated .modal__form_checkbox_input:invalid + .modal__form_checkbox_label,
+.modal__form__validated .modal__form_checkbox_input:not(:checked) + .modal__form_checkbox_label {
+  color: #ff5e66;
+}
+
+.modal__form__validated .modal__form_checkbox_input:checked + .modal__form_checkbox_label {
+  color: $font-grey;
+}
+
+.modal__form__validated .modal__form_checkbox:has(.modal__form_checkbox_input:invalid),
+.modal__form__validated .modal__form_checkbox:has(.modal__form_checkbox_input:not(:checked)) {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.modal__form_select {
+  width: 100%;
+  padding: 13px;
+  padding-right: 36px;
+  border: 1px solid #e3e6ed;
+  border-radius: 12px;
+  appearance: none;
+  background-color: $white;
+  font-size: 14px;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 16px;
+  }
+}
+
+.modal__form_select_wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 44px;
+    right: 19px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #000000;
+    mask-image: url("../../assets/img/sprite/form-arrow.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    @media (min-width: $breakpoint-md) {
+      top: 55px;
+    }
+  }
+}
+
+.modal__form_checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-bottom: 13px;
+}
+
+.modal__form_checkbox_input {
+  position: relative;
+  appearance: none;
+  accent-color: $primary-color;
+  width: 21px;
+  height: 21px;
+  margin-top: 5px;
+  flex-shrink: 0;
+  background-color: $primary-color;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: -3px;
+  }
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    border: 1px solid darken($primary-color, 15%);
+  }
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+    background-color: lighten($primary-color, 5%);
+  }
+
+  &:checked {
+    background-color: $primary-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg fill='white' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7.6 13.2l-3.3-3.3-1.4 1.4 4.7 4.7 10-10-1.4-1.4z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      pointer-events: none;
+    }
+  }
+
+  &:checked:hover {
+    background-color: darken($primary-color, 10%);
+    border: 1px solid darken($primary-color, 15%);
+  }
+
+  &:checked:focus {
+    background-color: lighten($primary-color, 5%);
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+.modal__form_checkbox_label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  padding-top: 2px;
+}
+
+.modal__form_button {
+  margin-top: 20px;
+  padding: 15px 59px 15px 20px;
+  
+  @media (min-width: $breakpoint-md) {
+    width: 194px;
+    margin: 20px auto 0;
+    padding: 20px 81px 20px 31px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    width: 304px;
+    margin: 20px auto 0;
+    padding: 20px 81px 20px 31px;
+  }
+
+  // Переопределяем стили для стрелочки как в форме
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 34px;
+    height: 34px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::before {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-md) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &::after {
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+    mask-image: url('../../assets/img/sprite/bold-arrow.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 10px 10px;
+    background-color: $white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    right: 5px;
+
+    @media (min-width: $breakpoint-md) {
+      right: 11px;
+    }
+  }
+
+  &:hover {
+    &::before {
+      background-color: $white;
+    }
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+} 

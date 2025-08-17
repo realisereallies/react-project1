@@ -1,0 +1,103 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.card {
+  position: relative;
+  background-color: $primary-color;
+  border: 1px solid $white;
+  border-radius: 17px;
+  padding: 15px 21px 15px 20px;
+  color: $white;
+  list-style: none;
+
+  @media (min-width: $breakpoint-md) {
+    min-width: 253px;
+    padding: 16px 14px 15px 20px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    min-width: 253px;
+    padding: 30px 51px 30px 41px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 22px;
+    z-index: 1;
+  }
+}
+
+// Иконки — через модификаторы
+
+.icon--star::before {
+  background-image: url('../../assets/img/sprite/about-star.svg');
+}
+
+.icon--number1::before {
+  background-image: url('../../assets/img/numbers/1.svg');
+}
+
+.icon--number2::before {
+  background-image: url('../../assets/img/numbers/2.svg');
+}
+
+// и т.д.
+
+.content {
+  @media (min-width: $breakpoint-xl) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    letter-spacing: 0.16px;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 20px;
+      line-height: 22px;
+      padding-bottom: 14px;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: 26px;
+      line-height: 30px;
+      max-width: 171px;
+      flex-shrink: 1;
+      flex-grow: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      max-width: 192px;
+      flex-shrink: 1;
+      flex-grow: 0;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+
+.faq {
+	max-width: 767px;
+	margin: 0 auto;
+	padding: 51px 15px 50px;
+
+	@media (min-width: $breakpoint-md) {
+	  max-width: 1439px;
+	  padding: 80px 45px 50px 45px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  max-width: 100%;
+	  padding: 71px 206px 60px;
+	}
+  }
+
+  .faq__title {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+	padding-bottom: 29px;
+
+	@media (min-width: $breakpoint-md) {
+	  font-size: 34px;
+	  line-height: 50px;
+	  padding-bottom: 40px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  font-size: 50px;
+	  padding-bottom: 71px;
+	}
+  }
+
+  .faq__list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	@media (min-width: $breakpoint-md) {
+	  gap: 10px;
+	}
+  }
+
+/* Faq.module.scss */
+.faq__list > li:nth-child(4) details,
+.faq__list > li:nth-child(5) details {
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	@media (min-width: $breakpoint-md) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+	  }
+
+	@media (min-width: $breakpoint-xl) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	  }
+  }
+
+  @media (min-width: $breakpoint-md) {
+	.faq__list .faq__item:nth-child(4) details > summary,
+	.faq__list .faq__item:nth-child(5) details > summary {
+	  padding-right: 130px;
+	}
+  }
+  
+
+  .faq__item {
+    // Стили для элементов списка FAQ
+    margin-bottom: 10px;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 10px;
+    }
+  }

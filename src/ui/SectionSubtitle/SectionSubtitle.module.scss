@@ -1,0 +1,31 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/global';
+
+.subtitle {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	vertical-align: middle;
+	padding-bottom: 20px;
+
+
+	@media (min-width: $breakpoint-md) {
+	  padding-bottom: 30px;
+	  font-size: 28px;
+	  line-height: 28px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  padding-bottom: 40px;
+	  font-size: 32px;
+	  line-height: 36px;
+	}
+  }
+
+  .white {
+	color: $white;
+  }
+
+  .primary {
+	color: $primary-color;
+  }

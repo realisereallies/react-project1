@@ -1,0 +1,253 @@
+
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.header {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+  }
+
+  .header__container {
+	position: absolute;
+
+	max-width: 738px;
+	width: 100%;
+	margin: 0 auto;
+	padding:19px 15px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@media (min-width: $breakpoint-md) {
+	  padding: 31px 45px 0;
+	  max-width: 1439px;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+	  padding: 29px 100px;
+	  max-width: 100%;
+	}
+  }
+
+  .header__logo-inner {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .header__menu-toggle {
+	position: relative;
+	min-width: 136px;
+	padding: 20px 37px 18px 20px;
+	z-index: 2;
+	margin-top: 1px;
+
+
+	&::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  right: 10px;
+	  mask-image: url("../../assets/img/sprite/burger-active.svg");
+	  mask-repeat: no-repeat;
+	  mask-position: 20% 50%;
+	  mask-size: 18px 18px;
+	  transition: background-image 0.3s;
+	  background-color: $white;
+	  width: 46px;
+	  height: 46px;
+
+	}
+
+	&:hover::after {
+	  transform: translateY(-50%) rotate(0);
+	  width: 46px;
+	  height: 46px;
+	  background-color: $primary-color;
+	  mask-position: 50% 50%;
+	  right: 4px;
+	}
+
+	&:focus::after {
+	  transform: translateY(-50%) rotate(0deg);
+	}
+
+	&::before {
+	  width: 46px;
+	  height: 46px;
+	  right: 4px;
+	}
+
+	&:hover::before {
+		background-color: $white;
+	  }
+  }
+
+  .header__menu-toggle--active {
+	width: 290px;
+	position: absolute;
+	right: 0px;
+	color: $white;
+	background-color: $primary-color;
+	padding: 19px 36px 19px 17px;
+
+	&:hover::after {
+	  background-image: url("/../../assets/img/sprite/cross.svg");
+	  background-color: $white;
+	  right: 4px;
+	}
+  }
+
+  .header__menu-toggle--active::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 5px;
+	width: 46px;
+	height: 46px;
+	background-image: url("../../assets/img/sprite/cross.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20px 20px;
+	background-color: $white;
+  }
+
+  .header__nav {
+	position: absolute;
+	top: 78px;
+	padding: 32px 26px 35px;
+	color: $white;
+	background-color: $primary-color;
+	border-radius: 15px;
+	width: 290px;
+	z-index: 2;
+
+	@media (min-width: $breakpoint-md) {
+	  top: 90px;
+	}
+  }
+
+  .header__nav-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+  }
+
+
+  .header__nav-item a,
+  .header__nav-item summary {
+	text-decoration: none;
+	color: $white;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 16px;
+	letter-spacing: 2%;
+	text-transform: uppercase;
+	opacity: 0.7;
+
+	&:hover {
+	  opacity: 1;
+	}
+  }
+
+  .header__nav-overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(49, 109, 194, 0.2);
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 1;
+  }
+
+  .header__nav-overlay--active {
+	opacity: 1;
+	pointer-events: auto;
+  }
+
+  .header__nav-list .header__sub-menu a {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	letter-spacing: 0%;
+	text-transform: none;
+	opacity: 0.7;
+
+	&:hover {
+	  opacity: 1;
+	}
+
+	&:focus {
+	  opacity: 1;
+	}
+  }
+
+
+  .header__sub-menu {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	padding-top: 16px;
+	padding-left: 15px;
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header__nav-details[open] .header__sub-menu {
+	opacity: 1;
+	transform: translateY(0);
+  }
+
+
+  .header__nav-item summary {
+	display: flex;
+	align-items: center;
+
+	gap: 12px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 16px;
+	text-transform: uppercase;
+	color: $white;
+	list-style: none;
+	cursor: pointer;
+  }
+
+  .header__nav-item summary::-webkit-details-marker {
+	display: none;
+  }
+
+  .header__nav-item summary::after {
+	content: "";
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background-image: url("../../assets/img/sprite/form-arrow.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transition: transform 0;
+  }
+
+  .header__nav-details[open] summary::after {
+	transform: rotate(180deg);
+  }
+
+  .header__nav-details[open] > summary,
+  .header__nav-details[open] .header__sub-menu a {
+	opacity: 1;
+  }
+

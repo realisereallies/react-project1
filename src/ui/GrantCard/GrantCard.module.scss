@@ -1,0 +1,6 @@
+// Импортируем стили из Grant.module.scss
+@import '../../components/grant/Grant.module.scss';
+
+.card {
+  @extend .grant__item;
+} 

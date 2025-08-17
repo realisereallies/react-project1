@@ -1,0 +1,96 @@
+@import '../../styles/mixins';
+@import '../../styles/global';
+
+.mainToggle {
+	position: relative;
+	text-transform: uppercase;
+	font-family: $font-main;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0;
+	border: 1px solid $primary-color;
+	border-radius: 30px;
+	color: $primary-color;
+	background-color: $white;
+	cursor: pointer;
+	padding: 20px 59px 18px 11px;
+
+    @media (min-width: $breakpoint-xl) {
+        padding: 21px 59px 19px 11px;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 4px;
+		width: 46px;
+		height: 46px;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	&::before {
+		background-color: $primary-color;
+		border: 1px solid $primary-color;
+		z-index: 1;
+
+		
+	}
+
+	&::after {
+		z-index: 2;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 10px 10px;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+		right: -4px;
+
+		
+	}
+
+	&:hover {
+		color: $white;
+		background-color: $primary-color;
+
+		&::before {
+			background-color: $white;
+		}
+
+		&::after {
+			background-color: $primary-color;
+		}
+	}
+
+	&:active {
+		opacity: 0.9;
+	}
+}
+
+// Варианты иконок
+.arrow::after {
+	background-image: url('/img/sprite/arrow.svg');
+}
+
+.burger::after {
+	background-image: url('/img/sprite/burger.svg');
+}
+
+.plus::after {
+	mask-image: url('/img/sprite/plus.svg');
+	mask-size: 10px 10px;
+	background-color: $white;
+	mask-repeat: no-repeat;
+	mask-position: center;
+}
+
+.minus::after {
+	mask-image: url('/img/sprite/minus.svg');
+	mask-size: 10px 10px;
+	background-color: $white;
+	mask-repeat: no-repeat;
+	mask-position: center;
+} 
