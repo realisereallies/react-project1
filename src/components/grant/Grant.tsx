@@ -21,7 +21,7 @@ export default function Grant() {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/public/grant-img@1x.webp 1x, /public/grant-img@2x.webp 2x"
+                srcSet="/grant-img@1x.webp 1x, /grant-img@2x.webp 2x"
                 width="290"
                 height="200"
               />

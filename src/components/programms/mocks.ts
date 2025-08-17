@@ -31,13 +31,13 @@ export const programsData: ProgramData[] = [
 		title: 'Стажировки',
 		description: 'Получите незаменимый опыт работы в крупнейших мировых компаниях.',
 		sources: [
-		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/public/programs-desktop--1@1x.webp 1x, /public/programs-desktop--1@2x.webp 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/public/programs-tablet--1@1x.webp 1x, /public/programs-tablet--1@2x.webp 2x', width: '324', height: '420' },
-		  { type: 'image/webp', srcSet: '/public/programs-mobile--1@1x.webp 1x, /public/programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
-		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/public/programs-desktop--1@1x.jpg 1x, /public/programs-desktop--1@2x.jpg 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/public/programs-tablet--1@1x.jpg 1x, /public/programs-tablet--1@2x.jpg 2x', width: '324', height: '420' },
+		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/programs-desktop--1@1x.webp 1x, /programs-desktop--1@2x.webp 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/programs-tablet--1@1x.webp 1x, /programs-tablet--1@2x.webp 2x', width: '324', height: '420' },
+		  { type: 'image/webp', srcSet: '/programs-mobile--1@1x.webp 1x, /programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
+		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/programs-desktop--1@1x.jpg 1x, /programs-desktop--1@2x.jpg 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/programs-tablet--1@1x.jpg 1x, /programs-tablet--1@2x.jpg 2x', width: '324', height: '420' },
 		],
-		img: { src: '/public/programs-mobile--1@1x.jpg', srcSet: '/public/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
+		img: { src: '/programs-mobile--1@1x.jpg', srcSet: '/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
 	  },
 
 	  {
@@ -51,13 +51,13 @@ export const programsData: ProgramData[] = [
 		  'лидерские качества'
 		),
 		sources: [
-		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/public/programs-desktop--2@1x.webp 1x, /public/programs-desktop--2@2x.webp 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/public/programs-tablet--2@1x.webp 1x, /public/programs-tablet--2@2x.webp 2x', width: '324', height: '420' },
-		  { type: 'image/webp', srcSet: '/public/programs-mobile--2@1x.webp 1x, /public/programs-mobile--2@2x.webp 2x', width: '290', height: '400' },
-		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/public/programs-desktop--2@1x.jpg 1x, /public/programs-desktop--2@2x.jpg 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/public/programs-tablet--2@1x.jpg 1x, /public/programs-tablet--2@2x.jpg 2x', width: '324', height: '420' },
+		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/programs-desktop--2@1x.webp 1x, /programs-desktop--2@2x.webp 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/programs-tablet--2@1x.webp 1x, /programs-tablet--2@2x.webp 2x', width: '324', height: '420' },
+		  { type: 'image/webp', srcSet: '/programs-mobile--2@1x.webp 1x, /programs-mobile--2@2x.webp 2x', width: '290', height: '400' },
+		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/programs-desktop--2@1x.jpg 1x, /programs-desktop--2@2x.jpg 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/programs-tablet--2@1x.jpg 1x, /programs-tablet--2@2x.jpg 2x', width: '324', height: '420' },
 		],
-		img: { src: '/public/programs-mobile--2@1x.jpg', srcSet: '/public/programs-mobile--2@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
+		img: { src: '/programs-mobile--2@1x.jpg', srcSet: '/programs-mobile--2@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
 	  },
 
 	  {
@@ -65,13 +65,13 @@ export const programsData: ProgramData[] = [
 		title: 'Учёба',
 		description: 'Получите образование и измените своё будущее.',
 		sources: [
-		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/public/programs-desktop--3@1x.webp 1x, /public/programs-desktop--3@2x.webp 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/public/programs-tablet--3@1x.webp 1x, /public/programs-tablet--3@2x.webp 2x', width: '324', height: '420' },
-		  { type: 'image/webp', srcSet: '/public/programs-mobile--1@1x.webp 1x, /public/programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
-		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/public/programs-desktop--3@1x.jpg 1x, /public/programs-desktop--3@2x.jpg 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/public/programs-tablet--3@1x.jpg 1x, /public/programs-tablet--3@2x.jpg 2x', width: '324', height: '420' },
+		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/programs-desktop--3@1x.webp 1x, /programs-desktop--3@2x.webp 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/programs-tablet--3@1x.webp 1x, /programs-tablet--3@2x.webp 2x', width: '324', height: '420' },
+		  { type: 'image/webp', srcSet: '/programs-mobile--1@1x.webp 1x, /programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
+		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/programs-desktop--3@1x.jpg 1x, /programs-desktop--3@2x.jpg 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/programs-tablet--3@1x.jpg 1x, /programs-tablet--3@2x.jpg 2x', width: '324', height: '420' },
 		],
-		img: { src: '/public/programs-mobile--1@1x.jpg', srcSet: '/public/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
+		img: { src: '/programs-mobile--1@1x.jpg', srcSet: '/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
 	  },
 
 	  {
@@ -79,12 +79,12 @@ export const programsData: ProgramData[] = [
 		title: 'Учёба',
 		description: 'Получите образование и измените своё будущее.',
 		sources: [
-		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/public/programs-desktop--3@1x.webp 1x, /public/programs-desktop--3@2x.webp 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/public/programs-tablet--3@1x.webp 1x, /public/programs-tablet--3@2x.webp 2x', width: '324', height: '420' },
-		  { type: 'image/webp', srcSet: '/public/programs-mobile--1@1x.webp 1x, /public/programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
-		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/public/programs-desktop--3@1x.jpg 1x, /public/programs-desktop--3@2x.jpg 2x', width: '392', height: '420' },
-		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/public/programs-tablet--3@1x.jpg 1x, /public/programs-tablet--3@2x.jpg 2x', width: '324', height: '420' },
+		  { media: '(min-width: 1440px)', type: 'image/webp', srcSet: '/programs-desktop--3@1x.webp 1x, /programs-desktop--3@2x.webp 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/webp', srcSet: '/programs-tablet--3@1x.webp 1x, /programs-tablet--3@2x.webp 2x', width: '324', height: '420' },
+		  { type: 'image/webp', srcSet: '/programs-mobile--1@1x.webp 1x, /programs-mobile--1@2x.webp 2x', width: '290', height: '400' },
+		  { media: '(min-width: 1440px)', type: 'image/jpeg', srcSet: '/programs-desktop--3@1x.jpg 1x, /programs-desktop--3@2x.jpg 2x', width: '392', height: '420' },
+		  { media: '(min-width: 768px)', type: 'image/jpeg', srcSet: '/programs-tablet--3@1x.jpg 1x, /programs-tablet--3@2x.jpg 2x', width: '324', height: '420' },
 		],
-		img: { src: '/public/programs-mobile--1@1x.jpg', srcSet: '/public/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
+		img: { src: '/programs-mobile--1@1x.jpg', srcSet: '/programs-mobile--1@2x.jpg 2x', alt: 'Две женщины обсуждают документы', width: '290', height: '400' },
 	  },
 ];
