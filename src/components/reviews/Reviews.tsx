@@ -101,7 +101,10 @@ const Reviews = () => {
   slidesPerGroup={1}
   breakpoints={{
     768: { slidesPerView: 1.3, slidesPerGroup: 1 },
-    1024: { slidesPerView: 1.4, slidesPerGroup: 1 },
+    850: { slidesPerView: 1.4, slidesPerGroup: 1 },
+    950: { slidesPerView: 1.5, slidesPerGroup: 1 },
+    1024: { slidesPerView: 1.6, slidesPerGroup: 1 },
+    1150: { slidesPerView: 1.8, slidesPerGroup: 1 },
     1440: { slidesPerView: 2, spaceBetween: 13, slidesPerGroup: 1, centeredSlides: false},
   }}
 >

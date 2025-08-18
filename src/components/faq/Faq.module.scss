@@ -1,6 +1,10 @@
 @import '../../styles/mixins';
 @import '../../styles/global';
 
+details > summary::-webkit-details-marker { 
+	display: none;       
+  }
+
 
 .faq {
 	max-width: 767px;
