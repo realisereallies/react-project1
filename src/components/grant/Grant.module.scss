@@ -8,6 +8,7 @@
 	max-width: 767px;
 	margin: 0 auto;
 	padding: 71px 15px 70px;
+	
 
 	@media (min-width: $breakpoint-md) {
 	  max-width: 1439px;
@@ -64,6 +65,7 @@
 	  display: flex;
 	  gap: 136px;
 	  padding-bottom: 119px;
+	  justify-content: center;
 	}
   }
 
