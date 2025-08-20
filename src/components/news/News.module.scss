@@ -61,6 +61,9 @@
 	scrollbar-width: none;
 	padding-bottom: 24px;
 	padding-left: 1px;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scroll-padding: 0 50%;
 
 	@media (min-width: $breakpoint-md) {
 	  padding-bottom: 30px;
@@ -71,14 +74,14 @@
 	  padding-left: 0;
 	  padding-bottom: 40px;
 	  overflow-x: visible;
-	  
+	  scroll-snap-type: none;
+	  scroll-padding: 0;
 	}
   }
 
   .news_tabs_wrapper {
 	display: flex;
-justify-content: center;
-	scroll-snap-type: x mandatory;
+	justify-content: center;
 	min-width: max-content;
 	gap: 11px;
 
@@ -90,9 +93,7 @@ justify-content: center;
 	@media (min-width: $breakpoint-xl) {
 	  justify-content: center;
 	  gap:30px;
-	  scroll-snap-type: none;
 	  min-width: auto;
-	
 	}
   }
 
@@ -107,7 +108,7 @@ justify-content: center;
 	vertical-align: middle;
 	text-transform: uppercase;
 	white-space: nowrap;
-	scroll-snap-align: start;
+	scroll-snap-align: center;
 	color: $primary-color;
 	border: none;
 	opacity: 0.6;

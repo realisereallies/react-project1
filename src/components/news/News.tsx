@@ -20,6 +20,18 @@ export default function News() {
   const pagRef = useRef<HTMLDivElement | null>(null);
   const apiRef = useRef<NewsSliderApi | null>(null);
 
+  // Прокручиваем к активному табу при его изменении
+  useEffect(() => {
+    const activeTabElement = document.querySelector(`.${styles.news_tab}.${styles['is-active']}`);
+    if (activeTabElement) {
+      activeTabElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [activeTab]);
+
   // Инициализируем один раз, когда ref'ы готовы
   useEffect(() => {
     if (!viewportRef.current || !trackRef.current || !prevRef.current || !nextRef.current || !pagRef.current) return;
