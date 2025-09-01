@@ -1,69 +1,157 @@
-# React + TypeScript + Vite
+# 🚀 Проект "Стажировка" - React Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный веб-сайт для проекта "Стажировка" - совместной инициативы правительств и волонтёрских бригад, направленной на повышение квалификации молодых специалистов.
 
-Currently, two official plugins are available:
+## ✨ Особенности проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Адаптивный дизайн** - оптимизирован для всех устройств (мобильные, планшеты, десктоп)
+- **Интерактивные компоненты** - слайдеры, модальные окна, формы
+- **Современный UI/UX** - использование актуальных дизайн-принципов
+- **TypeScript** - типизированный код для лучшей разработки
+- **SCSS модули** - компонентный подход к стилизации
 
-## Expanding the ESLint configuration
+## 🎯 Основные разделы
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Hero Section** - главный слайдер с информацией о проекте
+- **О проекте** - детальное описание целей и миссии
+- **Программы** - обзор доступных стажировок
+- **Гранты** - информация о финансовой поддержке
+- **Новости** - актуальные события и обновления
+- **FAQ** - часто задаваемые вопросы
+- **Отзывы** - мнения участников программы
+- **Контакты** - способы связи и карта
+- **Форма обратной связи** - для связи с командой
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Технологии
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 19.1.0** - современная версия React
+- **TypeScript 5.8.3** - типизированный JavaScript
+- **Vite 7.0.0** - быстрый сборщик и dev-сервер
+- **SCSS** - расширенный CSS с модулями
+- **Swiper 11.2.10** - библиотека для слайдеров
+- **ESLint** - линтер для качества кода
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Структура проекта
+
+```
+src/
+├── components/          # React компоненты
+│   ├── about/          # Секция "О проекте"
+│   ├── contacts/       # Контакты и карта
+│   ├── faq/           # Часто задаваемые вопросы
+│   ├── footer/        # Подвал сайта
+│   ├── form/          # Форма обратной связи
+│   ├── grant/         # Секция грантов
+│   ├── header/        # Шапка сайта
+│   ├── hero/          # Главный слайдер
+│   ├── modal/         # Модальные окна
+│   ├── news/          # Новости
+│   ├── programms/     # Программы стажировок
+│   └── reviews/       # Отзывы участников
+├── ui/                 # Переиспользуемые UI компоненты
+├── hooks/              # Кастомные React хуки
+├── styles/             # Глобальные стили и миксины
+└── assets/             # Шрифты и изображения
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Быстрый старт
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Предварительные требования
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (версия 18 или выше)
+- npm или yarn
+
+### Установка зависимостей
+
+```bash
+npm install
+# или
+yarn install
 ```
+
+### Запуск в режиме разработки
+
+```bash
+npm run dev
+# или
+yarn dev
+```
+
+Приложение будет доступно по адресу: https://react-project1-j0rk92ogq-elizabeta-davidovs-projects-26f4d0c0.vercel.app/
+
+### Сборка для продакшена
+
+```bash
+npm run build
+# или
+yarn build
+```
+
+### Предварительный просмотр сборки
+
+```bash
+npm run preview
+# или
+yarn preview
+```
+
+### Проверка качества кода
+
+```bash
+npm run lint
+# или
+yarn lint
+```
+
+## 🎨 Дизайн и стили
+
+Проект использует:
+- **SCSS модули** для компонентной стилизации
+- **Адаптивный дизайн** с breakpoints для разных устройств
+- **Кастомные шрифты** Manrope (Light, Medium, Regular)
+- **Оптимизированные изображения** в форматах WebP и JPG
+- **SVG иконки** для масштабируемости
+
+## 📱 Адаптивность
+
+Сайт оптимизирован для:
+- **Мобильные устройства** (320px+)
+- **Планшеты** (768px+)
+- **Десктоп** (1024px+)
+
+## 🔧 Настройка разработки
+
+### ESLint
+Проект настроен с ESLint для поддержания качества кода:
+- Правила для React Hooks
+- TypeScript поддержка
+- Автоматическое исправление при сохранении
+
+### TypeScript
+Полная поддержка TypeScript с:
+- Строгой типизацией
+- Интерфейсами для пропсов компонентов
+- Типами для API и данных
+
+## 📦 Основные зависимости
+
+### Production
+- `react` - основная библиотека
+- `react-dom` - DOM рендеринг
+- `swiper` - слайдеры и карусели
+- `clsx` - утилита для условных CSS классов
+
+### Development
+- `vite` - сборщик и dev-сервер
+- `typescript` - компилятор TypeScript
+- `sass-embedded` - компилятор SCSS
+- `eslint` - линтер кода
+
+## 🤝 Вклад в проект
+
+1. Форкните репозиторий
+2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'Add amazing feature'`)
+4. Отправьте в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
+
